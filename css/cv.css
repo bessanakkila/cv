@@ -1,0 +1,825 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+
+}
+/*header start*/
+.All{
+  background: red;
+ 
+}
+header{
+ 
+  justify-content: space-between; 
+  display: flex;
+ align-items: center;
+  padding: 20px;
+  padding-bottom: 30px;
+ 
+  
+ 
+}
+.fa-user{
+  font-size: 40px;
+  color: white;
+}
+
+
+nav ul{
+  display: flex;
+  list-style: none;
+
+  
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 40px;
+}
+a{
+  text-decoration: none;
+  color:white ;
+}
+.menu-icon{
+  width: 28px;
+  margin-left: 20px;
+  display: none;
+}
+.container{
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+
+}
+/*header finish************************************/
+/*main start**********************************************/
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+   
+    background: url(../img/lap.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+.main .p{
+  color: white;
+  position: absolute;
+  top: 200px;
+  left: 80px;
+  font-weight: 800;
+  
+}
+/**/
+.all{
+  background:white; 
+  border-radius: 18%;
+  position: absolute;
+  top: 230px;
+
+  
+}
+
+.glowing-btn {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 3px solid black;
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px white,
+    0px 0px 0.5em 0px white;
+  -moz-box-shadow: inset 0px 0px 0.5em 0px white,
+    0px 0px 0.5em 0px white;
+  box-shadow: inset 0px 0px 0.5em 0px red,
+    0px 0px 0.5em 0px white;
+  animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em red;
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em white;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em  white;
+  animation: text-flicker 3s linear infinite;
+  color: red;
+}
+.glowing-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  pointer-events: none;
+}
+
+.glowing-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: red;
+  box-shadow: 0 0 2em 0.2em white;
+  transition: opacity 100ms linear;
+ 
+}
+
+.glowing-btn:hover {
+  color: white;
+  text-shadow: none;
+  animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+  animation: none;
+  color: white;
+}
+
+.glowing-btn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowing-btn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowing-btn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/**/
+
+.main-btn{
+  position: absolute;
+  top: 330px;
+  left: 160px;
+    color: white;
+    background-color: red;
+    text-decoration: none;
+    border: 2px solid white;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0 .9375em 2.1875em;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: .7s ease;
+    height: 10px;
+    padding-top: 10px;
+    
+   
+   
+   
+   
+    
+    
+}
+.main-btn:hover{
+    transform: scale(1.1);
+}
+
+.text1{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 400px;
+    left: 90px;
+    
+  }
+  
+  .text2{
+    height: 60px;
+    width: 60px;
+   margin: 0 5px;
+  overflow: hidden;
+   background-color:red;
+   border-radius: 50px;
+   cursor: pointer;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5s);
+   transition: all 0.3s ease-out;
+   
+  }
+  .text2:hover{
+    width: 200px;
+  
+  }
+  
+  
+   .text3{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3 ease-out;
+  }
+  .text1 .text2:nth-child(1):hover .text3{
+    background-color:blue ;
+  }
+  .text1 .text2:nth-child(2):hover .text3{
+    background-color:red ;
+  }
+  .text1 .text2:nth-child(3):hover .text3{
+    background-color:palevioletred;
+  }
+  .text1 .text2:nth-child(4):hover .text3{
+    background-color:rgb(142, 241, 241) ;
+  }
+  
+  .text1 .text2 a{
+    color: white;
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+    
+  
+  }
+  .text1 .text2:hover .text3 a{
+    color: white;
+   
+  }
+  
+  .text1 .text2 span{
+    font-size: 23px;
+    font-weight: 500;
+    margin-left: 10px;
+  
+  }
+  .text1 .text2:nth-child(1) span{
+   color:blue ;
+  }
+  .text1 .text2:nth-child(2) span{
+    color:white ;
+  }
+  .text1 .text2:nth-child(3) span{
+    color:rgb(255, 0, 191) ;
+  }
+  .text1 .text2:nth-child(4) span{
+   color:rgb(111, 169, 236) ;
+  }
+  /*main finish************************************************************/
+  /*About me start*/
+.aboutme{
+    background-color: white;
+    width: 100%;
+    border: 1px solid red;
+   
+   
+   
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.col_2{
+  flex-basis: 50%;
+  min-width: 300px;
+  /*opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+  transition-delay: .3s;*/
+ 
+}
+/*.col_2.show{
+  opacity: 1;
+  transform: unset;
+}*/
+.img_me {
+    
+    width: 60%;
+    margin-left: 80px;
+    border-radius: 50%;
+    border: 3px solid red;
+    box-shadow: 0 15px 35px  black;
+    border: 3px solid white;
+    box-shadow: 0 15px 35px  black;
+    box-shadow:
+   
+    5px 3px rgba(195 , 192, 195, 955),
+    10px 6px rgba(255, 255,255, 2),
+    15px 9px rgba(255, 0,0, 9);
+
+    
+}
+.img_me:hover{
+    transform: scale(1.1);
+}
+
+.h2about{
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+   
+}
+.pme{
+    margin-left: 40px;
+    margin-top: 20px;
+}
+/*About me finish*/
+/* Skills Start*/
+
+.skills{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 1px solid white;
+
+}
+.col_5{
+ 
+  flex-basis: 15%;
+  min-width: 150px;
+  margin: 20px;
+  
+
+}
+.fa-html5{
+  background-color: red;
+  font-size: 70px;
+  color: white;
+}
+.fa-css3-alt{
+  background-color:blue;
+  font-size: 70px;
+  color: white;
+
+}
+.fa-js{
+  background-color:yellow;
+  font-size: 70px;
+  color: black;
+
+}
+.fa-bootstrap{
+  background-color: black;
+  font-size: 70px;
+  color: mediumorchid;
+}
+.fa-react{
+  background-color:black;
+  font-size: 70px;
+  color: paleturquoise;
+
+}
+h5{
+  color: white;
+  margin: 10px 0 0 25px;
+  font-size: 15px;
+}
+
+
+/*Skills finish*/
+/*project Start*/
+.profilo{
+  background-color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.profilo_box{
+  flex-basis: 25%;
+  min-width: 250px;
+  margin: 20px;
+  position: relative;
+  border-radius: 2em;
+  box-shadow: 0 0 1em red;
+  overflow: hidden;
+  display: flex;
+  
+}
+.profilo_box:hover .profilo_layer{
+  transform:translateY(0) ;
+}
+
+.profilo_img{
+  width: 100%;
+  transition: .5s ease;
+}
+.profilo_img:hover{
+  transform:scale(1.1) ;
+}
+
+.profilo_layer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, .1),red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: .5s ease;
+}
+.profilo_layer h4{
+  font-size: 2rem;
+  color: black;
+}
+.profilo_layer p{
+  font-size: 1rem;
+  color: #ddd;
+  margin: .3rem 0 1rem;
+}
+.profilo_layer h4{
+  font-size: 2rem;
+  color: black;
+}
+/*con start*/
+.con{
+  background-color: black;
+}
+form{
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 3rem;
+  
+ 
+}
+.input-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  
+}
+.input-box input{
+  flex-basis: 50%;
+ 
+  
+} 
+
+.con form .input-box input,
+.con form textarea{
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: red;
+  background-color: white;
+  border-radius: .8rem;
+  margin: .7rem 0;
+
+
+}
+ .con form.input-box input{
+  width: 49%;
+}
+.con form textarea{
+  resize: none;
+
+}
+.con .btn{
+  margin-top: 2rem;
+  cursor: pointer;
+  background-color: red;
+  padding: 5px;
+  border-radius: 10%;
+  margin-bottom: 20px;
+}
+
+
+
+/*contact start**************************************/
+
+
+.h2{
+    padding-top: 10px;
+    margin-bottom: 20px;
+    color: red;
+    text-align: center;
+   
+   
+}
+.cal-2{
+  flex-basis: 30%;
+  min-width: 250px;
+  margin-top: 50px; 
+  margin: 10px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid red;
+
+}
+.icon{
+    display: flex;
+    justify-content: center;
+     flex-direction: row;
+     
+   
+
+}
+
+.cal-2:hover{
+    transform: scale(1.1);
+}
+.fa-phone{
+    color: green;
+    font-size: 60px;
+    margin-top: 20px;
+}
+.fa-envelope{
+    color: red;
+    font-size: 60px;
+    margin-top: 20px;
+}
+/*contact finish*/
+/*footer start*/
+footer{
+    width: 100%;
+    background-color: red ;
+    position: relative;
+    height: 14vh;
+   
+    
+
+}
+.footer{
+  position: absolute;
+  left: 42%;
+  top: 10px;
+  color: white;
+   font-size: 20px;
+
+   
+}
+.fa-laptop{
+  position: absolute;
+  left: 50%;
+  top: 50px;
+    color: white;
+    font-size: 30px;
+}
+   
+/*footer finish*/
+
+
+@media only screen and (max-width:600px) {
+  nav ul{
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background:white ;
+      width:100%;
+      overflow: hidden;
+      transition: max-height 0.5s;
+  }
+
+  nav ul li{
+      display: block;
+      margin-right: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+     
+  }
+
+  nav ul li a{
+      color:red;
+  }
+  .menu-icon{
+      display: block;
+      cursor: pointer;
+  }
+  .glowing-btn{
+    font-size: 1.4em;
+
+  }
+  .main-btn{
+    position: absolute;
+    top: 300px;
+    left: 110px;
+    padding: 0 .8075em 1.5000em;
+    padding-top: 8px;
+   
+      
+      
+     
+     
+     
+     
+      
+      
+  }
+  .text1{
+  
+    top: 380px;
+    left: 70px;
+    
+  }
+  .text2{
+    height: 40px;
+    width: 40px;
+  }
+  .text2:hover{
+    width: 140px;
+  
+  }
+  
+   .text3{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 30px;
+    
+  }
+  .text1 .text2 a{
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    transition: all 0.3s ease-out;
+    
+  
+  }
+  .text1 .text2 span{
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 10px;
+  
+  }
+  .img_me {
+    
+    width: 100%;
+    margin-left: 0;  
+    margin-bottom: 20px;
+}
+
+.pme{
+    margin-left: 40px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+.footer{
+  position: absolute;
+  left: 35%;
+  top: 10px;
+  color: white;
+   font-size: 15px;
+
+   
+}
+.fa-laptop{
+  position: absolute;
+  left: 48%;
+  top: 50px;
+    color: white;
+    font-size: 25px;
+}
+.profilo_layer h4{
+  font-size: 1rem;
+  color: black;
+}
+.profilo_layer p{
+  font-size: .5rem;
+  color: black;
+}
+
+
+  
+  
+
+}
+
+
+
+
+
+
+
